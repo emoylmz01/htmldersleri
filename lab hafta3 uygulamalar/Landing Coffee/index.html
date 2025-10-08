@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Coffee</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-content">
+        <nav>
+            <a href="#" class="logo"><i class="fa fa-coffee"></i></a>
+            <ul>
+                <li><a href="#" class="nav-link" data-section="home">Home</a></li>
+                <li><a href="#" class="nav-link" data-section="about">About</a></li>
+                <li><a href="#" class="nav-link" data-section="services">Services</a></li>
+                <li><a href="#" class="nav-link" data-section="contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="content">
+            <div class="left">
+                <h1>Buy me a <span>Coffee</span></h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, facilis.sit amet consectetur...</p>
+                <a href="https://www.starbucks.com.tr" class="btn" id="buyNowBtn">Buy now</a>
+
+                <div class="social">
+                    <a href="#"><i class="fab fa-behance"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-dribbble"></i></a>
+                </div>
+            </div>
+            <div class="right">
+                <img src="img/coffee.png" alt="">
+            </div>
+        </div>
+
+        
+        <section id="home" class="info-section"> 
+            <h2>Welcome to CoffeeLand!</h2>
+            <p>En taze çekirdeklerle hazırlanan kahvelerimizi keşfedin.</p>
+        </section>
+
+        <section id="about" class="info-section" style="display:none;">
+            <h2>About Us</h2>
+            <p>Biz, kahveyi sadece bir içecek değil, bir yaşam tarzı olarak gören bir ekibiz ☕</p>
+        </section>
+
+        <section id="services" class="info-section" style="display:none;">
+            <h2>Our Services</h2>
+            <p>• Özel harman kahveler<br>• Barista eğitimi<br>• Online kahve aboneliği</p>
+        </section>
+
+        <section id="contact" class="info-section" style="display:none;">
+            <h2>Contact Us</h2>
+            <p>Bize ulaşın: <b>contact@coffeeland.com</b></p>
+        </section>
+
+        
+        <section id="buySection" class="info-section" style="display:none;">
+            <h2>Sipariş Ver</h2>
+            <p>Kahveni seç:</p>
+            <select>
+                <option>Latte</option>
+                <option>Americano</option>
+                <option>Espresso</option>
+                <option>Mocha</option>
+            </select>
+            <p>Boyut seç:</p>
+            <select>
+                <option>Küçük</option>
+                <option>Orta</option>
+                <option>Büyük</option>
+            </select>
+            <br><br>
+            <button class="btn">Siparişi Onayla</button>
+        </section>
+
+    </div>
+
+    <script>
+        
+        const links = document.querySelectorAll(".nav-link");
+        const sections = document.querySelectorAll(".info-section");
+        const buyBtn = document.getElementById("buyNowBtn");
+
+        links.forEach(link => {
+            link.addEventListener("click", e => {
+                e.preventDefault();
+                const id = link.dataset.section;
+                sections.forEach(sec => sec.style.display = "none");
+                document.getElementById(id).style.display = "block";
+            });
+        });
+
+       
+        buyBtn.addEventListener("click", e => {
+            e.preventDefault();
+            sections.forEach(sec => sec.style.display = "none");
+            document.getElementById("buySection").style.display = "block";
+        });
+    </script>
+</body>
+</html>

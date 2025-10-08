@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #20056b; 
+}
+
+
+#flag {
+  position: fixed;
+  width: 100px;   
+  height: auto;
+  pointer-events: none; 
+  z-index: 9999;
+  user-select: none;
+}
