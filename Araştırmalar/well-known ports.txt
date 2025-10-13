@@ -1,0 +1,55 @@
+Temel Bilgi
+
+Toplam 65.535 port vardır (0–65535 arası).
+
+0–1023 arası portlar: “Well-known ports” (sisteme ait)
+
+1024–49151 arası: “Registered ports” (uygulamalar)
+
+49152–65535 arası: “Dynamic / Private ports” (geçici, rastgele bağlantılar)
+
+Yani ilk 1024 port, TCP/IP protokollerinde sistem tarafından ayrılmıştır ve genelde özel yetkili işlemler (root/admin) gerektirir.
+
+🔢 En Çok Kullanılan Well-Known Portlar
+Port	Protokol	Kullanım Amacı
+20	FTP Data	Dosya aktarımı (veri kanalı)
+21	FTP Control	Dosya aktarımı (kontrol kanalı)
+22	SSH	Güvenli uzaktan erişim (terminal)
+23	Telnet	Şifrelenmemiş uzaktan erişim (artık pek kullanılmaz)
+25	SMTP	E-posta gönderimi
+53	DNS	Alan adını IP’ye çevirir
+67	DHCP Server	IP adresi dağıtımı (sunucu)
+68	DHCP Client	IP adresi alma (istemci)
+69	TFTP	Basit dosya transfer protokolü
+80	HTTP	Web trafiği (güvensiz)
+110	POP3	E-posta alma protokolü
+119	NNTP	Haber grupları (Usenet)
+123	NTP	Zaman senkronizasyonu (clock)
+135	RPC	Windows Remote Procedure Call
+137-139	NetBIOS	Windows ağ paylaşımı
+143	IMAP	E-posta alma (gelişmiş sürüm)
+161	SNMP	Ağ cihazlarını yönetme
+389	LDAP	Dizin hizmetleri (örnek: Active Directory)
+443	HTTPS	Güvenli web trafiği (TLS/SSL)
+445	SMB	Dosya paylaşımı (Windows)
+514	Syslog	Log gönderimi
+587	SMTP (TLS)	Güvenli e-posta gönderimi
+631	IPP	Yazıcı paylaşımı (Internet Printing Protocol)
+993	IMAPS	Güvenli e-posta alma (IMAP + SSL)
+995	POP3S	Güvenli e-posta alma (POP3 + SSL)
+💡 Özet Mantık
+
+Portlar iletişim kapılarıdır.
+
+Her uygulama bir port dinler.
+Örneğin:
+
+Tarayıcı → 80 veya 443 (HTTP/HTTPS)
+
+SSH istemcisi → 22
+
+DNS → 53
+
+Sunucular genellikle 0–1023 port aralığını kullanır.
+
+Kullanıcı programları genelde 1024’ten sonra başlar.
