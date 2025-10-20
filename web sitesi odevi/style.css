@@ -18,7 +18,7 @@ body {
 
 
 .yan-menu {
-    position:fixed;/* === GENEL AYARLAR === */
+    position:fixed;
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
@@ -36,7 +36,7 @@ a {
   color: inherit;
 }
 
-/* === HEADER === */
+
 .ust-banner {
   text-align: center;
   background: linear-gradient(90deg, #111, #1b1b1b);
@@ -57,7 +57,7 @@ a {
   margin-top: 10px;
 }
 
-/* === YAN MENÜ === */
+
 .yan-menu {
   position: fixed;
   top: 0;
@@ -100,7 +100,7 @@ a {
   transition: transform 0.3s;
 }
 
-/* === ALT MENÜ === */
+
 .alt-menu {
   display: none;
   background: rgba(40, 40, 40, 0.5);
@@ -120,7 +120,7 @@ a {
   color: #fff;
 }
 
-/* === GALERİ === */
+
 .galeri {
   margin-left: 260px;
   padding: 40px 20px;
@@ -155,7 +155,7 @@ a {
   transform: scale(1.1);
 }
 
-/* === İÇERİK === */
+
 .icerik {
   margin-left: 260px;
   background: rgba(25, 25, 25, 0.5);
@@ -201,7 +201,7 @@ a {
   margin: 10px 0 5px 0;
 }
 
-/* === FOOTER === */
+
 footer {
   text-align: center;
   background: #0a0a0a;
@@ -212,7 +212,7 @@ footer {
   letter-spacing: 0.5px;
 }
 
-/* === YAPRAKLAR (slider noktaları) === */
+
 .yapraklar {
   text-align: center;
   margin-top: 15px;
@@ -333,7 +333,7 @@ footer {
 }
 .yaprak:hover, .yaprak.active { background:#e50914; }
 
-/* === LOGO TASARIMI === */
+
 .logo-alani {
   display: flex;
   align-items: center;
@@ -365,7 +365,7 @@ footer {
   padding-bottom: 6px;
 }
 
-/* === FOOTER LOGO === */
+
 .footer-logo {
   width: 60px;
   opacity: 0.1;
@@ -376,3 +376,4 @@ footer {
 footer:hover .footer-logo {
   opacity: 0.25;
 }
+
