@@ -1,0 +1,88 @@
+APTCHA (Bilgisayarları ve İnsanları Ayırt Etmek İçin Tamamen Otomatik Genel Turing Testi),  bir web sitesine gelen insan ziyaretçiler ile robotik ajanlar arasında ayrım yapmak için tasarlanmış bir sistemdir. Yöneticiler, gelen kullanıcıları CAPTCHA'lar ile doğrulayabilir ve web siteleri, bir kullanıcının gerçek mi yoksa kötü niyetli mi olduğunu belirleyebilir.
+
+İnternet kullanıcıları, oturum açma kimlik bilgilerini veya kredi kartı bilgilerini kullanarak bir web sitesini ziyaret etmeye çalıştıklarında, bir CAPTCHA tamamlamaları istenebilir. Bu, genellikle web sitesine erişmek için bir CAPTCHA kodu veya kelimeleri girmelerini, görsellere tıklamalarını veya bir CAPTCHA çözücüyü tamamlamalarını gerektiren hızlı bir adımdır. 
+
+CAPTCHA Nasıl Çalışır?
+CAPTCHA, ilk olarak spam yazılımlarının web sitesi sayfalarına yorum yapmasını veya toplu ürün satın almasını engellemek amacıyla oluşturulmuştur. CAPTCHA formları, hesap kayıtlarında, çevrimiçi anketlerde ve e-ticaret ödemelerinde yaygın olarak kullanılır.
+
+Klasik CAPTCHA çözücü, kullanıcılardan, bir botun tanıma olasılığının düşük olması için, bozuk harfleri belirlemelerini istiyordu. Kullanıcıların bozuk karakterleri çözüp bir form alanına yazmaları ve ardından göndermeleri gerekiyordu. Harfler doğru girilmemişse, kullanıcıdan tekrar denemesi isteniyordu.
+
+Spam gönderenler orijinal CAPTCHA stratejisini aşabildikleri için yeni stratejiler geliştirildi. 2. nesil CAPTCHA, kullanıcıların belirli bir türe uyan görselleri seçmesini gerektiriyordu. 3. nesil reCAPTCHA ise kullanıcıların insan olduklarını (veya robot olmadıklarını) onaylayan bir onay kutusunu tıklamasını gerektiriyordu.
+
+Onay kutusu yaklaşımı, robotlar ve insanlar arasında ayrım yapmak için ters mantık kullanır; çünkü insanlar imleçleri rastgele yollar boyunca sürüklerken, robotlar imleçleri ekran boyunca doğrudan yollar boyunca hareket ettirir. Fare hareketinden yeterli veri alınamazsa, 3. nesil reCAPTCHA 2. nesil teste geri dönebilir.
+
+Görüntü testi, eşleşen görüntüleri seçmede insan ve robot arasındaki hassasiyet farklılıklarına da dayanır. Görüntü, insanların genellikle hangi parçaları dahil edeceğinden emin olmadığı bir ızgaraya bölünebilir. Robotlar genellikle öngörülebilir örüntüler halinde tıklama eğilimindedir.
+
+CAPTCHA'nın Kullanım Amacı Nedir?
+CAPTCHA denetimi, web sitelerinin gerçek kullanıcıları botlardan ayırt etmesini sağlayan geniş bir kullanım alanına sahiptir. Spam mesajları filtrelemek, uygunsuz yorumları kısıtlamak ve mesajların otomatik olarak gönderilmesini önlemek için kullanılabilir. Bazı web siteleri de botlara karşı kendilerini korumak için CAPTCHA kullanır ve bot etkinliğine benzeyen bir davranış tespit ederlerse bir CAPTCHA testi başlatabilirler. 
+
+Hizmetlere kayıt sınırlaması
+CAPTCHA, Gmail, Hotmail veya Yahoo Mail gibi ücretsiz servislerde botların birden fazla hesap oluşturmasını önleyebilir. CAPTCHA'lar, birden fazla spam e-posta hesabı oluşturulmasını önlemek için kayıt formlarına yerleştirilir.
+
+Sahte yorumların önlenmesi
+CAPTCHA'lar ayrıca web sitelerinin spam mesajları veya sahte yorumların yayınlanmasını engellemesine de yardımcı olur. Bu, iletişim formları veya mesaj panoları içeren bloglar veya web sayfaları için kullanışlıdır ve yalnızca meşru yorumların yayınlanmasını sağlar.
+
+Anket doğruluğunun korunması
+CAPTCHA'lar ayrıca web sitelerinin spam mesajları veya sahte yorumların yayınlanmasını engellemesine de yardımcı olur. Bu özellik, iletişim formları veya mesaj panoları içeren bloglar ve web sayfaları için kullanışlıdır ve yalnızca meşru yorumların yayınlanmasını sağlar.
+
+Bilet enflasyonunun önlenmesi
+Konser veya spor müsabakaları gibi etkinliklere bilet satan web siteleri, bilet enflasyonunu önlemek ve kullanıcıların satın alabileceği bilet sayısını sınırlamak için CAPTCHA kullanır. Bu, karaborsacıların toplu bilet satın alıp kâr amacıyla veya fahiş fiyatlarla satmasını önlemeye yardımcı olur. Web siteleri bu şekilde, meşru müşterilerin adil fiyatlarla bilet satın alabilmesini sağlayabilir.
+CAPTCHA Kullanmanın Dezavantajları Nelerdir?
+Bu avantajlara rağmen, CAPTCHA kullanmanın bazı dezavantajları da vardır. Bunlar şunlardır:
+
+Kötü kullanıcı deneyimi
+CAPTCHA testleri en kullanıcı dostu araçlar değildir ve kullanıcıların akışını kesintiye uğratarak onları sık sık hayal kırıklığına uğratabilir. Bu durum, kullanıcıların CAPTCHA'yı veren web sitesi hakkında olumsuz bir görüşe sahip olmalarına ve çoğu zaman o web sitesini bir daha kullanmamalarına yol açabilir.
+
+Görme engelli ziyaretçiler için uygun değildir
+CAPTCHA'nın temel dezavantajlarından biri, insanların görsel algısına dayanmasıdır. Başka bir deyişle, kullanıcıların bir web sitesine erişebilmek için CAPTCHA'nın oluşturduğu metin veya görselleri görmeleri gerekir. Sonuç olarak, ciddi görme engelli veya yasal olarak kör olan kişiler için CAPTCHA'ların kullanımı neredeyse imkansızdır.
+
+Bu testler botlar ve yükleniciler tarafından aldatılabilir
+Bazı CAPTCHA testleri, botlar kullanılarak kandırılabilir veya aşılabilir ve web sitelerini korumak için bunlara güvenilmemelidir. Özellikle bazı botlar metin tabanlı CAPTCHA'ları aşabilirken, diğerleri görüntü tanıma testlerini alt edip çözmek üzere programlanmıştır.
+
+Spam gönderenler tarafından CAPTCHA testlerini çözmeleri için "işe alınan" düşük gelirli çalışanlar etrafında bir ev endüstrisi oluşmuştur. CAPTCHA'lar spam maliyetini artırır, ancak bot etkinliğini yavaşlatan bir miktar sürtünme yaratır.
+
+Örneklerle CAPTCHA Türleri
+ Web sitelerini korumak için CAPTCHA'yı yapılandırmanın çeşitli seçenekleri mevcuttur  . Yaygın örnekler şunlardır:
+
+Metin tabanlı CAPTCHA
+Klasik bir format, kullanıcıların metin kutusuna şifresini çözüp girmesi gereken kelimeler veya rakam ve harf kombinasyonları kullanan metin tabanlı CAPTCHA'dır. Bu format, harflerin yaylar, noktalar, renkler veya çizgiler kullanılarak yabancılaştırılmasını veya çarpıtılmasını içerir ve böylece botların harfleri tanıması engellenir.
+
+Örneğin, yeni bir çevrimiçi hesap oluştururken, kullanıcı spambotların tanıyamayacağı bir dizi bozuk veya çarpıtılmış karakterle karşılaşır.
+CAPTCHA resmi
+Metin tabanlı CAPTCHA'lara bir alternatif, görsel tabanlı yöntemdir. Kullanıcılara günlük nesneler gibi tanınabilir görseller veya grafikler sunulur ve orijinal görsele benzeyen görselleri seçmeleri istenir.
+
+Diğer görsel tabanlı CAPTCHA'lar, kullanıcılardan görselde bulunan öğeleri seçmelerini ister. Örneğin, trafik ışıkları içeren bir görseldeki tüm kareleri seçmek gibi. 
+
+Bu CAPTCHA testlerinin meşru kullanıcılar tarafından çözülmesi hızlı, botların veya bilgisayar programlarının ise sınıflandırması ve çözmesi daha zordur. Bu nedenle, resim tabanlı CAPTCHA'lar metin tabanlı seçeneklere göre daha güvenli bir alternatiftir.
+Ses CAPTCHA
+Metin ve resimli CAPTCHA'lar, kullanıcıların bilgileri görebilmesine bağlıdır ve bu da görme engelli kişilerin kullanımını kısıtlar. Web siteleri, genellikle kullanıcıların bir kodun veya harf ve sayı dizisinin sesli versiyonunu dinlemek için seçebilecekleri bir düğme içeren sesli CAPTCHA'larla bu sorunu aşabilir. Bu, web sitesi kullanılabilirliğini artırır ve sitelerin tüm kullanıcılar tarafından erişilebilir olmasını sağlar.
+Matematik veya kelime problemleri
+Spam botları filtrelemenin bir diğer yolu da kullanıcılar çözüm gereken matematik veya kelime problemlerini kullanmak ve cevaplarını metin kutusuna girmektir. Bunlar genellikle kullanıcıların hızlıca çözüm girebileceği basit matematik denklemleri veya kelime tanıma problemleridir.
+
+Sosyal medyada oturum açma
+Kullanıcılar, bir hizmete giriş yapmak için Facebook veya LinkedIn hesabı gibi sosyal medya profillerini kullanabilirler. Bu, tek oturum açma (SSO) işlemi kullanılarak bilgilerin otomatik olarak doldurulmasını sağlar .
+
+reCAPTCHA
+Orijinal CAPTCHA formatları gelişmiş botlar yaprakından doldurulabildiğinden, giderek daha fazla reCAPTCHA ile değiştirilmektedir. Google reCAPTCHA hizmet, insan kullanıcılar ve botlar arasında dahahazla kesinlik sağlayan dahahelişmiş testler sunar. Metinleri ve görselleri gerçek dünyadan alır veya onay kutuları, görsel tanıma ve davranış değerlendirici içerir.
+CAPTCHA ve reCAPTCHA'nın Yapay Zeka (AI) ile İlişkisi Nedir?
+Çoğu durumda, yapay zekâ sistemleri, oldukça basit görünen görüntüleri tanımlamakta zorluk çeker. Örneğin, yoldaki bir "yol ver" işaretini, güneşin açısına, üzerine düşen gölgelere veya yandan yaklaşık 90 derece gibi bakılan perspektife bağlı olarak anlamak zor olabilir. Yapay zekâ algoritmalarının, insanların nispeten kolay seçebileceği nesneleri tanımlayabilmesi için büyük miktarda veriye ihtiyacı vardır.
+
+Peki CAPTCHA bir yapay zeka bilgisayarı için ne anlama geliyor? Bir öğretim aracı. İnsan kullanıcılar uygun görseli her seçtiğinde, bu veriler bir yapay zeka makinesine geri gönderiliyor ve bu da yaya geçitleri ile kaldırımlar, trenler ile kamyonlar, dur işaretleri ile yol işaretleri veya bisikletler ile motosikletler arasındaki farkları ayırt etmesine yardımcı oluyor.
+
+CAPTCHA Dolandırıcıları Nasıl Önler?
+CAPTCHA, dolandırıcıların çeşitli amaçlarla web sitelerine erişmesini engellemek için yaygın olarak kullanılır, bunlar arasında şunlar yer alır: 
+
+Çevrimiçi anketleri korur
+CAPTCHA'lar çevrimiçi anketleri koruyabilir ve yalnızca geçerli kullanıcıların anketi tamamlamasını sağlayabilir. Bu, spam gönderenlerin anket sonuçlarını çarpıtmasını önler.
+
+E-posta solucanlarına/istenmeyen postalara karşı koruma sağlar
+Spam göndericilerin kötü amaçlı yazılım , istenmeyen posta veya  kimlik avı saldırıları yaymak için birden fazla hesap oluşturmasını önleyin  .
+
+Bloglarda yorum spam'ini önler
+Spam gönderenlerin iletişim formları içeren bloglara veya web sayfalarına erişmesini ve sahte yorum göndermelerini önleyin.
+
+Sözlük saldırılarını önler
+Bilgisayar korsanları, bir sözlükteki tüm kelimeleri deneyerek parolaları tahmin etmek için yazılım kullanarak sistemlere yetkisiz erişim sağlamak amacıyla sözlük saldırıları gerçekleştirebilirler   . CAPTCHA bu tür saldırıları önleyebilir.
+
+Web sitesi kayıtlarını korur
+Dolandırıcıların ücretsiz e-posta sağlayıcıları gibi ücretsiz hizmetlere birden fazla hesap açmasını önlemek için web sitelerini etkinleştirin. 

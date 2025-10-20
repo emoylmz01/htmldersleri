@@ -1,0 +1,18 @@
+HTML Şifreleme Nedir?
+Sitenizin riskli durumlarını engellemek amacıyla çok hızlı bir şekilde sonuç alabileceğiniz, kodları panele girmenizle şifreleme yapan ücretsiz bir araçtır. Sitenizin HTML kodlarını panele girerek kolayca şifreleme işlemi gerçekleştirebilirsiniz.
+
+HTML Şifreleme Ne İşe Yarar?
+Web sitenizi riskli durumlara karşı korumayı amaçlayan bu araç sayesinde, sitenizdeki HTML kodlarını kolay bir şekilde saklayabilir, sitenizin kodlarına erişenler, oldukça karmaşık ve onlar için bir şey ifade etmeyen bir kod yapısıyla karşılaşırlar. Böylece sitenizin HTML kodlarını koruyabilirsiniz.
+
+HTML Şifreleme Neden Kullanılır?
+Sitenize dışarıdan yapılacak olası saldırıları önlemek, sitenizin HTML kodlarının başkası tarafından kullanılmasını önlemek ve kodların dışarıya karşı gizlenmesi amacıyla kullanılır.
+
+HTML Kodlarını Şifrelemek Neden Önemlidir?
+
+Sizinle rakip olan sitelerin sahipleri etik olmayan yöntemlerle sitenize zarar vermek isteyebilir. Rakiplerinizin yapacağı basit saldırılara karşı kodlarınızı şifrelemeniz size büyük avantaj sağlar. Ayrıca sitenizde daha önce düşünülmemiş bir tasarım ya da kodlama varsa, bunu rakiplerinizin elde etmesini önlemiş olursunuz.
+
+HTML Kod Şifreleme ve Çözme
+HTML encode etmek ve HTML decode etmek olarak bilinen bu 2 kavram, sitenizin kodlarını önce karmaşık bir yapıya dönüştürmek, daha sonra bu karmaşık yapıyı yeniden okunabilir ve basit düzeye çevirme işlemidir. Encoder kavramı şifrelemek yani kodları daha karmaşık bir yapıya sokmak, decoder ise şifre çözmek yani kodları daha anlaşılır ve basit düzeye getirmek anlamına gelir.
+
+HTML Şifreleme Nasıl Kullanılır?
+Araçtaki ilgili kısma şifrelenmesini istediğiniz HTML kodlarının tamamını kopyala yapıştır yaparak panele ekleyebilirsiniz. Sağ taraftaki “Şifrele” butonuna bastığınız zaman, kodlar sizin için otomatik olarak hızlı bir şekilde şifrelenmiş halde verilecektir. Sonra bu kodları gidip sitenizde direkt olarak kullanabilirsiniz. Artık bu kodları rakipleriniz incelese bile bir şey anlayamayacaktır.

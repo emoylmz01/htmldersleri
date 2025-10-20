@@ -1,0 +1,19 @@
+Bilgisayar dili içinde geçen ioncube nedir ne işe yarar nasıl kullanılır sorusu karşımıza artık özel bir dili, şifrelemeyi çıkarıyor.
+
+Kodlama dilinin de işin içine girdiği ioncube nedir konusu hakkında bir çeşit kriptolama tekniği tanımlaması veriliyor. PHP dosyaları ve sayfalarının ioncube ile şifrelendiğini öğreniyoruz. Bu şifreleme sonrası çalışabilmenin tek yolu ise server denen sunucuda ioncube loader programının kütüphanesinin kurulu olması. Ioncube loader bu şifrelemeyi çözen karşı programdır.
+
+Yapılan bir projede, yazılan bir sayfada değişiklik yapılmasını istemezseniz kaynak kodlarının değiştirilmemesi için bu kodları şifrelemeniz gerekecek. Yapılan bu kodlama ioncube ile adeta koruma altına alınmaktadır. Bir şifreleme tekniği olan ioncube’un PHP eklentisi (ext.) de vardır. Ioncube ne işe yarar diye sorulduğu zaman akla kodlama ve şifreleme gelmektedir.
+
+Ücretli Bir Programdır
+Ioncube aslında ücretli bir programdır, çünkü ücretli çeşitler (versiyonlar) dosyalarını özellikle korumak isteyenler içindir. Fakat iobcube loader serbesttir. Başkasının yaptığı özel bir şifrelemeyi çözmek amaç olduğu için ücretli sürüm olmasına da gerek yoktur. Bu yüzden ioncube loader ücretsizdir. İlgili pek çok sitenin sunucularında ioncube loader bulunabilir ve kullanım için indirilebilir. Ayrıca ioncube nasıl kullanılır sorusuna cevap olan ve ortaya bir çeşit kodlama görüntüsü çıkaran açıklamaları da gene internette bulabilirsiniz. Fakat bilgisayar dili hakkında yeterli bir bilgi birikiminin olması gerektiğini de bu sayfalara göz atınca anlayacaksınız.
+
+Ayrıca bu çeşit şifreleme ve şifre çözme konularının bilgisayarda güvenlik konularını temel alan yazılar içinde olduğunu da hatırlatmak isteriz. Sonuçta bir emek ile ortaya konan çalışmanın koruma altına alınmak istenmesi de son derece normaldir.
+
+Şifreleme Hakkında
+İşin temeli olan şifreleme bu kez bilgisayar dili üzerinden yapılmaktadır. Yani düz metni (plaintext) rastgele görünen karakterlere (chipertext) dönüştürmektir. Fakat rastgele götünen bu dizin aslında belli bir mantığa göre çalışmaktadır ve sadece bir anahtar ile açılabilir. O özel anahtarı bulmak  ise şifre kırmaktır. Şifreler algoritma tekniklerini kavrayınca birbiri ardına çözülür.
+
+En basit algoritma yöntemi olarak Sezar Algoritmasını örnek verebiliriz. Şifrelenecek yazının kendinden sonra gelen harf ile değiştirilmesi ile kullanılan bu basit teknik Sezar döneminde askerlere yollanacak gizli emirler için düşünülmüştü. Y bu sistemde z demekti.
+
+Şifrelemenin ve şifre kırmanın tarihe geçmiş hikayeleri vardır. Bu hikayeler daha bilgisayarlar hayatımıza girmeden insanlık tarihinde iz bıraktılar. Ama kimse kolay kolay bu hikayeleri bilmez.
+
+Örneğin 2. Dünya Savaşında Alman ordusunun, donanmasının ve istihbaratının kullandığı ve kırılamaz denen Enigma şifresini kıran ve savaşın seyrini değiştiren ünlü İngiliz matematikçi Alan Turing’i bilir misiniz? Ioncube şifreleme dosyaları ile ilgilenecek kadar bilgisayarları seviyor ve konuya ilgi duyuyorsanız bu dahinin hikayesini de öğrenmeniz gerektiğini düşünüyoruz. Apple’ın ısırılmış elması bile onunla ilgilidir.

@@ -1,0 +1,5 @@
+PHP HTTP çerezlerini şeffaf olarak destekler. Çerezler, uzak tarayıcıda veri saklamayı ve böylece geri dönen kullanıcılar hakkında veri takibi yapmayı sağlar. Çerezleri, setcookie() ya da setrawcookie() işlevleri ile atayabilirsiniz. Çerezler, HTTP başlığının birer parçasıdır, bu yüzden tarayıcıya bir veri göndermeden önce setcookie() işlevini çağırmalısınız. Aynı kısıtlama header() işlevi için de vardır. çıktı tamponlama işlevlerini kullanarak betik çıktısını, herhangi bir başlık ya da çerez atayıp atamayacağınıza karar verene kadar geciktirebilirsiniz.
+
+İstemci tarafından sunucuya gönderilen herhangi bir çerez, variables_order yönergesi "C" değerini içeriyorsa $_COOKIE süper küresel dizisine atanır. Eğer tek bir çereze, birden fazla değer atamak isterseniz, çerez ismine [] eklemeniz yeterli olacaktır.
+
+Tarayıcı hataları dahil, daha fazla bilgi edinmek için setcookie() ve setrawcookie() işlevlerine bakınız.

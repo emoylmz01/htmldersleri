@@ -1,0 +1,76 @@
+Drupal, internet ile ilgili istediğiniz projeyi oluşturmak için tercih edilen web geliştirme platformudur. Drupal, PHP programlama dilinde yazılmıştır.
+
+Drupal kullanmak, uygulamalarınız için daha az geliştirme süresi ve maliyet sağlayacaktır.
+
+Drupal'ın tescilli bir ürüne göre sahip olduğu en büyük avantaj, açık kaynak kodlu bir içerik yönetim sistemi olmasıdır; bu, koda sahip olduğunuz anlamına gelir, böylece kod üzerinde kolayca değişiklik yapabilirsiniz.
+
+Drupal Tarihçesi
+Drupal, Hollanda'da Dries Buytaert tarafından geliştirilen bir ilan tahtası sistemi olarak ortaya çıkmış ve 2001 yılında açık kaynak projesi haline getirilmiştir.
+
+Drupal, bir milyondan fazla kez indirilmiş ve büyük bir geliştirme topluluğuna sahiptir.
+
+Neden Drupal Kullanmalıyız?
+Güvenilir ve verimli bir araç olarak Drupal'ın popülaritesinin altını çizen birkaç faktör vardır. Bu nedenlerden bazıları aşağıdaki şekildedir.
+
+Açıkça Organize Edilmiş URL Yapısı
+Drupal, geliştiricilere kendi seçtikleri otomatik ve özel URL'ler oluşturma konusunda tam özgürlük sağlar. URL kişiselleştirmeyi kolaylaştırmak için birkaç modül bulunmaktadır.
+
+Yüksek Düzeyde SEO Dostu
+Web sitenizin olabildiğince SEO dostu olmasını sağlamak önemlidir. Bu, SEO meta etiketleriyle çalışmak için maksimum yetenekler sunan bir platform seçerek yapılabilir. 
+
+Çoklu İçerik Türü Desteği
+İçeriğin İnternetin tartışmasız en önemli şeyidir. Mükemmel web sitesini oluşturmak için istediğiniz içerik türlerini kolayca oluşturabilirsiniz. Bloglar, forumlar, temel sayfalar, podcast'ler gibi farklı içerik türleri oluşturabilirsiniz.
+
+Üstün Yerleşik Sınıflandırma Yetenekleri
+Drupal’ın yerleşik sınıflandırma özellikleri, içeriği anahtar kelimeler açısından zengin etiketlerle ilişkilendirmenize olanak tanır. Web siteniz için diğer sitelerden ayrı durması için benzersiz "kelime dağarcığı" oluşturabilirsiniz.
+
+Gelişmiş Kullanıcı Yönetimi
+Kullanıcıları yönetmek için verimli bir sistem olmadan bir site eksiktir. Drupal, kullanıcılara belirli rolleri ve sorumlulukları kolayca atayan bir CMS sistemi oluşturmanıza olanak tanır. 
+
+Zengin Eğitim Kaynak İmkanı
+Kullanıcıların gelişmiş Drupal sistemini oluşturmalarına yardımcı olacak birçok Drupal kaynağı bulunmaktadır. Pek çok meraklı bloglar, SlideShare ve YouTu hakkında makaleler paylaşmaktadır.
+
+Ölçeklenebilirliğin Gücü
+Geleceği göz önünde bulundurarak bir web sitesi kurmalısınız. Birkaç yıl sonra mimarinin ve yazılımın ölçeklenebilir olması çok önemlidir. Drupal’ın ölçeklenebilirlik yeteneği, bir CMS platformunu seçerken göz önünde bulundurmanız gereken bir şeydir.
+
+Çok Esnektir
+Drupal’ın özellik oluşturma yeteneklerinin sınırı yoktur. En karmaşık yazılım gereksinimlerini oluşturmak için binlerce verimli modül arasından seçim yapabilirsiniz.
+
+Kurumsal Yapıya Uygundur
+Dünyanın en iyi şirketlerinden ve üniversitelerinden bazıları Drupal tarafından desteklenmektedir. 
+
+Gelişmiş Topluluk Desteği
+Drupal, Drupal'ı daha büyük bir şan için güçlendirmeye adanmış aktif bir topluluk üssü tarafından desteklenmektedir. Drupal'a olan bağlılıkları, önerilen web sitenizin güvenli ellerde olduğunun yeterince kanıtıdır.
+
+Drupal Nerelerde Kullanılabilir?
+Drupal'ın kullanılabileceği site türlerinden bazıları aşağıdaki şekildedir.
+
+Bloglar
+Kişisel Websiteleri
+Kurumsal Websiteleri
+Portallar
+Forumlar
+E-Ticaret Siteleri-
+Intranet Uygulamaları
+CRM Uygulamaları
+Kaynak Dizin Uygulamaları
+Sosyal Medya Siteleri
+Drupal Kulanan Popüler Siteler
+Drupal bir çok büyük kurum tarafından kullanılmaktadır.
+
+United Institute of Peace
+General Electric
+eBay
+The Economist
+Tesla Motors
+Louvre Museum
+HHS.gov
+NCAA.com
+Daha fazla referans görebilmek için Drupal Showcase sayfasını inceleyebilirsiniz.
+
+Son Olarak
+Drupal, karmaşık, içeriği yoğun ve yüksek trafikli web sitelerinin yanı sıra büyük kaynak kitaplıkları ve veritabanlarına sahip olanlar için genellikle en iyi seçimdir.
+
+Drupal son derece güçlü, esnek, işlevsel ve güvenlidir.
+
+Siz hangi içerik yönetim sistemini kullanıyorsunuz, yorumlarda paylaşmayı unutmayın

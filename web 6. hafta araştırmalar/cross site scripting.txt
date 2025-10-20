@@ -1,0 +1,97 @@
+XSS Nedir?
+Cross-site scripting attack (XSS) yani siteler arası komut dosyası çalıştırma saldırısı, bir bilgisayar korsanının, iyi huylu ve güvenilir olarak görülen bir web sayfasının içeriğine, genellikle istemci tarafı komut dosyası biçiminde kötü amaçlı kod enjekte etmesiyle oluşur. Kötü amaçlı komut dosyası genellikle, JavaScript ve HTML olan istemci tarafı programlama dillerinde yazılır.
+
+Genel olarak, XSS saldırılarına yatkın web uygulamaları, kullanıcıların girdilerini doğrulamaz veya kodlamaz. Bir siber suçlu, bu kusurdan yararlanabilir ve şüphelenmeyen bir son kullanıcıya tehlikeli bir komut dosyası gönderebilir. Ne yazık ki, kullanıcının tarayıcısı, komut dosyasına güvenilir bir kaynaktan geliyormuş gibi davranır ve onu yürütür; bu, potansiyel olarak şüphelenmeyen kullanıcıya zarar verir.
+
+XSS Saldırısı Nasıl Çalışır?
+Tipik olarak, siteler arası komut dosyası çalıştırma saldırısı şu şekilde çalışır:
+
+Siber suçlular, kullanıcıların girdilerini kabul eden bir web sayfasının XSS saldırılarına açık olduğunu keşfeder. Kullanıcıların yorum kutuları, giriş formları veya arama kutuları aracılığıyla girdilerini kabul ediyor olabilir.
+Saldırganlar kötü amaçlı bir komut dosyası (yük) oluşturur ve bunu şüphelenmeyen bir kullanıcıya gönderir. Yükü bir kimlik avı bağlantısına ekleyebilir ve hedef alınan kişiyi tıklamaya ikna edebilir.
+Hedeflenen kişi kötü niyetli bağlantıyı tıkladığında, şimdiye kadar güvendiği savunmasız web sayfasına yönlendirilir.
+Yük, savunmasız web sayfasına enjekte edilir ve hedef alınan kişinin web tarayıcısı bunu meşru kaynak kodu olarak değerlendirir.
+Şüphelenmeyen kullanıcı bazı girdiler girip bunları gönderdiğinde, yük siber suçluların talimatlarına göre yürütülür.
+XSS Saldırı Türleri
+XSS için üç ana saldırı stratejisi vardır. Bunlar DOM XSS, reflected XSS ve stored XSS’dir.
+
+DOM XSS: DOM tabanlı bir XSS saldırı stratejisinde, bilgisayar korsanı, orijinal istemci komut dosyasının çalıştığı kurbanın tarayıcısında belge nesne modelini (DOM) değiştirerek yükü enjekte eder. Sayfa değişmez, ancak sayfada bulunan istemci tarafı kodu, kötü amaçlı kod değişiklikleriyle çalışır.
+
+Reflected XSS: Kalıcı olmayan XSS olarak da bilinen reflected XSS siber saldırısında, bilgisayar korsanları kötü amaçlı komut dosyasını doğrudan bir HTTP isteğine enjekte eder. Ardından, web sunucusundan yürütüldüğü kullanıcının tarayıcısına yansıtır. Bilgisayar korsanı sıklıkla hedeflenen kişilere, onları savunmasız bir sayfaya getiren özelleştirilmiş bağlantılar gönderir.
+
+Reflected XSS saldırıları kalıcı değildir. Bir kullanıcı kötü niyetli bir bağlantıyı tıkladığında, özel olarak hazırlanmış bir formun göndermesi veya kötü niyetli bir siteye göz atması için kandırıldığında, enjekte edilen kod savunmasız web sitesine gider. Web sunucusu, sırayla, enjekte edilen komut dosyasını kullanıcının tarayıcısına döndürür veya yansıtır. Bu aldatma, bir hata mesajında, arama sonucunda veya isteğin bir parçası olarak sunucuya gönderilen verileri içeren başka bir yanıt türünde olabilir. Tarayıcı, yanıtın, kullanıcının zaten etkileşimde bulunduğu “güvenilir” bir sunucudan geldiğini varsaydığı için kodu yürütür.
+
+Stored XSS: Bilgisayar korsanları yüklerini güvenliği ihlal edilmiş bir sunucuda depoladığında saldırılar gerçekleşir. Genellikle zarar veren bir XSS saldırı yöntemidir. Saldırgan, yüklerini hedef uygulamaya enjekte etmek için bu yaklaşımı kullanır. Uygulamanın giriş doğrulaması yoksa, kötü amaçlı kod, uygulama tarafından veri tabanı gibi bir konumda kalıcı olarak depolanır veya kalıcı olur. Pratikte bu, saldırganın bir blog veya forum gönderisindeki yorum bölümleri gibi kullanıcı giriş alanlarına kötü amaçlı bir komut dosyası girmesine olanak tanır.
+
+Saldırganın yükü, virüslü sayfayı açtığında, tarayıcısında meşru bir yorumun görünmesiyle aynı şekilde, kullanıcının tarayıcısına sunulur. Hedeflenen kişiler, sayfayı tarayıcılarında görüntülediklerinde yanlışlıkla kötü amaçlı komut dosyasını yürütürler.
+
+Cross-Site Scripting Zafiyeti Vektörleri
+Siteler arası komut dosyalarını enjekte etme yöntemleri önemli ölçüde farklılık gösterir. Bilgisayar korsanları, savunmasız web işlevselliğinin kendisiyle doğrudan etkileşime girmeden birçok güvenlik açığından yararlanabilir. Bir bilgisayar korsanının bir web uygulamasından ve denetimden alabileceği herhangi bir veri, bir enjeksiyon vektörü olabilir.
+
+Bilgisayar korsanları, çeşitli türlerde etiketler kullanabilir ve orada amaçlananın yerine JavaScript kodunu bu etiketlere yerleştirebilir. Örneğin, bu etiketlerin tümü, gerçeklere bağlı olarak bazı tarayıcılarda çalıştırılabilen kötü amaçlı kodlar taşıyabilir.
+
+Daha yaygın siteler arası komut dosyası çalıştırma saldırı vektörlerinden bazıları aşağıdaki şekildedir:
+
+script tags (komut dosyası etiketleri)
+iframe tags (iframe etiketleri)
+img attributes (img özellikleri)
+input tags (giriş etiketleri)
+link tags (bağlantı etiketleri)
+the background attribute of table tags and td tags (tablo etiketlerinin ve td etiketlerinin arka plan özelliği)
+div tags (div etiketleri)
+object tags (nesne etiketleri)
+Onerror ve onload gibi JavaScript olay öznitelikleri çoğu zaman birçok etikette kullanılır ve bu da onları bir başka popüler siteler arası komut dosyası çalıştırma saldırı vektörü haline getirir.
+
+Cross-Site Scripting Saldırılarının İşletmelere Etkileri
+Cross-site scripting saldırılarının işletmelere etkileri aşağıdaki şekildedir:
+
+1. Hassas Müşteri Bilgilerinin Kaybı
+XSS saldırıları; kredi kartı verileri, ad ve adres gibi hassas bilgilerin çalınmasını içerebilir. İşletmenin büyüklüğüne ve saldırının kapsamına bağlı olarak milyonlarca kişi bu durumdan etkilenebilir. Kullanıcı kimliğine bürünmeye yol açabilecek yetkilendirme tanımlama bilgisi hırsızlığını da içerebilir.
+
+2. Kâr Kaybı
+XSS saldırıları itibarı olumsuz etkileyebilir ve müşteri güvenini kırabilir. Bu da kâr üzerinde negatif bir etkiye sahip olabilir.
+
+3. Düzenleyici ve Uyumluluk Sorunları
+PCI DSS, GDPR ve KVKK gibi devlet ve sektör düzenlemeleri, ticari müşterilerin bir XSS saldırısından etkilenmesi durumunda işletmeleri dava ve para cezalarına tabi tutabilir.
+
+Cross-Site Scripting Zafiyeti Nasıl Giderilir?
+İşletmeler, aşağıdaki en iyi uygulamaları izleyerek XSS saldırılarının sayısını ve etkisini azaltabilir:
+
+1. Web varlıklarını denetleyin
+Web varlıklarınızın envanterini çıkarın ve sahip oldukları veri türünü öğrenin. Savunmasız komut dosyaları ve herhangi bir manipülasyon belirtisi olup olmadığına bakın.
+
+2. İstemci tarafını düzenli olarak tarayın
+İzinsiz girişleri, davranışsal anormallikleri ve bilinmeyen tehditleri ortaya çıkarmak için istemci tarafı uygulamalara ve yazılımlara düzenli olarak derinlemesine taramalar yapın.
+
+3. Girişlerde HTML’yi engelleyin
+Kullanıcı girişini  front-end ve back-end’de temizleyerek, kötü amaçlı kodun giriş göndermesini engelleyin.
+
+4. Otomatik izleme ve incelemeyi kullanın
+İzleme ve inceleme etkinlikleri kritiktir, ancak istemci tarafı JavaScript kodunu düzenli olarak gözden geçirmek için otomatik bir çözümünüz yoksa zaman alıcıdır. Süreci otomatikleştiren amaca yönelik bir çözüm, yetkisiz komut dosyası etkinliğini belirlemenin hızlı ve kolay bir yolu olabilir.
+
+5. Form girişlerini doğrulayın
+Bir kullanıcının bir forma girdiği bilgileri sınırlayın. Örneğin, tüm içeriğin alfasayısal olmasını zorunlu kılın ve siteler arası komut dosyası oluşturmada yaygın olarak kullanılan HTML veya etiketleri engelleyin.
+
+6. Güvenli tanımlama bilgileri oluşturun
+Siteler arası komut dosyası çalıştırma saldırılarında kullanılmalarını önlemek için bunları belirli bir IP adresine bağlamak gibi tanımlama bilgisi kuralları uygulayın.
+
+Bulutistan Cross-Site Scripting Zafiyeti İçin İşletmenize Nasıl Yardımcı Olabilir?
+Bulutistan Web Uygulama Güvenlik Duvarı (WAF), işletmelerin XSS saldırılarını ve güvenlik açıklarını önlemesine ve tespit etmesine yardımcı olur. Bulutistan WAF, iş açısından kritik web uygulamalarını bilinen tehditlerden, yeni ve ortaya çıkan saldırı yöntemlerinden, bilinmeyen veya sıfırıncı gün güvenlik açıklarından korur. İşletmelerin, yeni bir özelliği devreye soktukları, mevcut bir özelliği güncelledikleri veya yeni web API’lerini kullanıma sundukları veya başlattıkları her zaman, değişen hızla gelişen saldırı yüzeylerini korur.
+
+Bulutistan WAF, işletmelerin web uygulamalarının ve API’lerinin korumasını artıran gelişmiş özellikleri kullanmalarını da sağlar. Bu özellikler, Open Web Application Security Project’in (OWASP) – En İyi 10 web güvenlik riski de dahil olmak üzere, işletmeleri tehditlerden korumaya yönelik çok katmanlı bir yaklaşım sunar. Ayrıca Bulutistan, korumayı her uygulama için özelleştirmek için makine öğrenimini kullanır; bu, web uygulamalarını manuel olarak ayarlamak için zaman alan bir süreç olmadan sağlam bir koruma sağlar. Bu ayrıca işletmelerin anormal davranışları hızlı bir şekilde tespit etmesine ve kötü niyetli bot etkinliğini engellemesine olanak tanır.
+
+Bulutistan WAF; donanım araçları, veri merkezindeki kapsayıcılar, bulut tabanlı uygulamalar veya bulutta yerel Hizmet Olarak Yazılım (SaaS) çözümleri gibi tüm iş uygulamalarını korumak için kurulabilir.
+
+Bulutistan WAF ile ilgili daha fazla bilgi almak isterseniz, linke tıklayabilirsiniz.
+
+XSS (Cross-Site Scripting) İle İlgili En Çok Sorulan Sorular
+1. XSS’nin hedefleri hangi dillerdir?
+XSS saldırıları için en yaygın dil JavaScript’tir, ancak XSS HTML, Flash, VBScript, CSS ve diğer web geliştirme dillerini ve çerçevelerini etkileyebilir.
+
+2. XSS nasıl keşfedilir?
+XSS’yi keşfetmenin en etkili yolu, bir web güvenlik açığı tarayıcısı kullanmaktır. Bu araçlar, bir XSS saldırısına yol açabilecek güvenlik açıklarını ve olası sorunları keşfetmek için siteleri tarar.
+
+3. XSS ve SQL Injection saldırıları arasındaki fark nedir?
+Siteler arası komut dosyası oluşturma, web uygulamalarının kullanıcılarını hedef alması nedeniyle SQL enjeksiyon saldırıları gibi web saldırıları için diğer vektörlerden farklıdır. SQL enjeksiyon saldırıları doğrudan uygulamaları hedefler.
+
+4. Cross-site scripting saldırıları neden oluşur?
+Cross-site scripting, girişler güvenli olmayan bir şekilde işlendiğinde web sitelerinde bulunur. Örneğin, http://test.com/xss?xssparam= gibi bir URL içindeki bir değişken olabilir. xss?param değeri, site için dinamik içerik oluşturmak için kullanılabilir ve sitenin çıktısı içinde döndürülür. Parametrenin değeri üzerinde doğrulama veya kodlama yapılmazsa, bir saldırgan parametreyi kendi JavaScript’lerini içerecek şekilde değiştirebilir.

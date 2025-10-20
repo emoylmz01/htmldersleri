@@ -1,0 +1,16 @@
+Web servis nedir?
+Web servis HTTP protokolü üzerinden diğer sistemlere/cihazlara hizmet veren yapılardır.
+
+Ne işe yarar?
+Web servis uzak sistemler veya farklı platformlar arasında XML, JSON, CSV vb. ortak bir biçim kullanarak veri alışverişini sağlar.
+
+Neden kullanılır?
+Web servis genellikle farklı platformlar arasında belirlenen ortak bir biçim ile veri alışverişi yapmak için kullanılır.
+
+Örneğin; Çok kullanıcılı olan bir firmada X diliyle geliştirilen muhasebe, varlık yönetimi vb. uygulama, kullanıcıların isteği üzerine Y işletim sistemli cep telefonları üzerinden de kullanılmak istenebilir.
+
+Platformların birbirleriyle iletişim kurabilmesi için ortak bir biçimi kullanması gerekir.
+
+Bu durumda platformlar arası ortak bir biçimi kullanan web servis yazılarak iletişim sağlanır.
+
+Özetle; Web Servis, Java, C++, C#, PHP, Node.js, Python, GO, Linux, Windows vb. HTTP protokolü üzerinden iletişim yapan ve kullanılacak ortak biçimi (genellikle XML ve JSON) destekleyen yapılar arası iletişimi sağlar.
