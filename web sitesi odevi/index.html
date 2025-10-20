@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porschekolik</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    
+    <header class="ust-banner">
+         <div class="logo-alani">
+        <img src="images/porsche-logo.png" alt="Porsche Logo" class="logo">
+        <h1>Porschekolik</h1>
+    </div>
+    <p>Eğer sen de bir Porsche tutkunuysan, burası tam sana göre!</p>
+    </header>
+
+    <aside class="yan-menu">
+    <ul>
+        <li>
+            <a href="javascript:void(0);" onclick="toggleAltMenu('718')">718 ▸</a>
+            <ul class="alt-menu" id="alt-718">
+                <li onclick="modelGoster('718 Boxster')">Boxster</li>
+                <li onclick="modelGoster('718 Cayman')">Cayman</li>
+            </ul>
+        </li>
+        <li>
+            <a href="javascript:void(0);" onclick="toggleAltMenu('911')">911 ▸</a>
+            <ul class="alt-menu" id="alt-911">
+                <li onclick="modelGoster('911 Carrera')">Carrera</li>
+                <li onclick="modelGoster('911 Turbo S')">Turbo S</li>
+            </ul>
+        </li>
+        <li>
+            <a href="javascript:void(0);" onclick="toggleAltMenu('Cayenne')">Cayenne ▸</a>
+            <ul class="alt-menu" id="alt-Cayenne">
+                <li onclick="modelGoster('Cayenne S')">S</li>
+                <li onclick="modelGoster('Cayenne Turbo GT')">Turbo GT</li>
+            </ul>
+        </li>
+        <li>
+            <a href="javascript:void(0);" onclick="toggleAltMenu('Macan')">Macan ▸</a>
+            <ul class="alt-menu" id="alt-Macan">
+                <li onclick="modelGoster('Macan T')">T</li>
+                <li onclick="modelGoster('Macan GTS')">GTS</li>
+            </ul>
+        </li>
+        <li>
+            <a href="javascript:void(0);" onclick="toggleAltMenu('Panamera')">Panamera ▸</a>
+            <ul class="alt-menu" id="alt-Panamera">
+                <li onclick="modelGoster('Panamera 4')">4</li>
+                <li onclick="modelGoster('Panamera Turbo')">Turbo</li>
+            </ul>
+        </li>
+        <li>
+            <a href="javascript:void(0);" onclick="toggleAltMenu('Taycan')">Taycan ▸</a>
+            <ul class="alt-menu" id="alt-Taycan">
+                <li onclick="modelGoster('Taycan 4S')">4S</li>
+            </ul>
+        </li>
+    </ul>
+</aside>
+
+
+    </aside>
+
+    <section class="galeri">
+        <div class="buyuk-resim">
+            <img id="anaResim" src="images/911porsche.jpeg" alt="Porsche">
+        </div>
+
+        <div class="kucuk-resimler">
+            <img src="images/718porsche.jpeg" onmouseover="degistir('images/718porsche.jpeg')">
+            <img src="images/911porsche.jpeg" onmouseover="degistir('images/911porsche.jpeg')">
+            <img src="images/cayennePorsche.jpeg" onmouseover="degistir('images/cayennePorsche.jpeg')">
+            <img src="images/macanPorsche.jpeg"onmouseover="degistir('images/macanPorsche.jpeg')">
+            <img src="images/panameraPorsche.jpeg" onmouseover="degistir('images/panameraPorsche.jpeg')">
+            <img src="images/taycanPorsche.jpeg" onmouseover="degistir('taycanPorsche.jpeg')">
+        </div>
+
+        <div class="yapraklar">
+    <span class="yaprak" onclick="degistir('images/718porsche.jpeg')"></span>
+    <span class="yaprak" onclick="degistir('images/911porsche.jpeg')"></span>
+    <span class="yaprak" onclick="degistir('images/cayennePorsche.jpeg')"></span>
+    <span class="yaprak" onclick="degistir('images/macanPorsche.jpeg')"></span>
+    <span class="yaprak" onclick="degistir('images/panameraPorsche.jpeg')"></span>
+    <span class="yaprak" onclick="degistir('images/taycanPorsche.jpeg')"></span>
+</div>
+
+
+
+       
+    </section>
+
+    <section class="icerik" id="icerik-alani">
+            <h2>Hoşgeldin Porschekolik</h2>
+            <p> Sol menüden model seçerek detaylı bilgilere ulaşabilirsin.</p>
+    </section>
+
+    <footer>
+        <img src="images/porsche-logo.png" alt="Porsche Logo" class="footer-logo">
+        <p>Hazırlayan: Emirhan Yılmaz | © 2025 Porschekolik</p>
+
+    </footer>
+
+    <script>
+        const resimler = [
+            'images/718porsche.jpeg',
+            'images/911porsche.jpeg',
+            'images/cayennePorsche.jpeg',
+            'images/macanPorsche.jpeg',
+            'images/panameraPorsche.jpeg',
+            'images/taycanPorsche.jpeg'
+        ];
+        let suanki = 0;
+
+        function degistir(resim) {
+            const anaResim = document.getElementById('anaResim');
+            anaResim.style.opacity = 0;
+            setTimeout(() => {
+                anaResim.src = resim;
+                anaResim.style.opacity = 1;
+            }, 300);
+        }
+
+      
+        function otomatikSlider() {
+            suanki++;
+            if (suanki >= resimler.length) suanki = 0;
+            degistir(resimler[suanki]);
+        }
+        setInterval(otomatikSlider, 4000);
+
+        
+        function toggleAltMenu(menuId) {
+            const menu = document.getElementById('alt-' + menuId);
+            const ok = menu.previousElementSibling.querySelector('.ok');
+            if (menu.style.display === 'block') {
+                menu.style.display = 'none';
+                ok.style.transform = 'rotate(0deg)';
+            } else {
+                menu.style.display = 'block';
+                ok.style.transform = 'rotate(90deg)';
+            }
+        }
+
+      
+       
+    function modelGoster(model) {
+    const icerik = document.getElementById('icerik-alani');
+  
+    icerik.style.opacity = 0;
+
+    setTimeout(() => {
+      
+        if (model === '718 Boxster') {
+            icerik.innerHTML = `
+                <h2>Porsche 718 Boxster</h2>
+                <div class="modeller">
+                    <div class="model">
+                        <img src="images/718-boxster.jpeg" alt="718 Boxster">
+                        <h3>718 Boxster</h3>
+                        <p>2,0 L Turbo • ≈300 hp • 0-100 km/s ~4,7 sn • Maksimum hız ≈ 275 km/s</p>
+                    </div>
+                    <div class="model">
+                        <img src="images/718-boxster4.0.jpeg" alt="718 Boxster GTS">
+                        <h3>718 Boxster GTS 4.0</h3>
+                        <p>4,0 L atmosferik • 394 hp • 0-100 km/s ~3,8 sn • Yüksek devrin keyfi</p>
+                    </div>
+                </div>
+            `;
+        }
+        else if (model === '718 Cayman') {
+            icerik.innerHTML = `
+                <h2>Porsche 718 Cayman</h2>
+                <div class="modeller">
+                    <div class="model">
+                        <img src="images/718-cayman.jpeg" alt="718 Cayman">
+                        <h3>718 Cayman</h3>
+                        <p>2,0 L Turbo • ≈300 hp • 0-100 km/s ~4,7 sn • Maksimum hız ≈ 275 km/s</p>
+                    </div>
+                    <div class="model">
+                        <img src="images/718-cayman4.0.jpg" alt="718 Cayman GTS">
+                        <h3>718 Cayman GTS 4.0</h3>
+                        <p>4,0 L atmosferik • 394 hp • 0-100 km/s ~3,8 sn • Net performans odaklı</p>
+                    </div>
+                </div>
+            `;
+        }
+        else if (model === '911 Carrera') {
+            icerik.innerHTML = `
+                <h2>Porsche 911 Carrera</h2>
+                <div class="modeller">
+                    <div class="model">
+                        <img src="images/911-carrera.jpeg" alt="911 Carrera">
+                        <h3>911 Carrera</h3>
+                        <p>3,0 L Twin Turbo • ~385 hp • 0-100 km/s ~4,2 sn • Maksimum tork: ~450 Nm :contentReference[oaicite:0]{index=0}</p>
+                    </div>
+                </div>
+            `;
+        }
+        else if (model === '911 Turbo S') {
+            icerik.innerHTML = `
+                <h2>Porsche 911 Turbo S</h2>
+                <div class="modeller">
+                    <div class="model">
+                        <img src="images/911-turbos.jpeg" alt="911 Turbo S">
+                        <h3>911 Turbo S</h3>
+                        <p>3,8 L Twin Turbo • ~640 hp • 0-100 km/s ~2,7 sn • Yüksek performans canavarı</p>
+                    </div>
+                </div>
+            `;
+        }
+        else if (model === 'Cayenne S') {
+            icerik.innerHTML = `
+                <h2>Porsche Cayenne S</h2>
+                <div class="modeller">
+                    <div class="model">
+                        <img src="images/cayenne-s.jpg" alt="Cayenne S">
+                        <h3>Cayenne S</h3>
+                        <p>V6 motor • ~348 hp • SUV + performans dengesi</p>
+                    </div>
+                </div>
+            `;
+        }
+        else if (model === 'Cayenne Turbo GT') {
+            icerik.innerHTML = `
+                <h2>Porsche Cayenne Turbo GT</h2>
+                <div class="modeller">
+                    <div class="model">
+                        <img src="images/cayenne-turbogt.jpeg" alt="Cayenne Turbo GT">
+                        <h3>Cayenne Turbo GT</h3>
+                        <p>V8 motor • 650 hp seviyesinde • SUV’da performans</p>
+                    </div>
+                </div>
+            `;
+        }
+        else if (model === 'Macan T') {
+            icerik.innerHTML = `
+                <h2>Porsche Macan T</h2>
+                <div class="modeller">
+                    <div class="model">
+                        <img src="images/macan-t.jpeg" alt="Macan T">
+                        <h3>Macan T</h3>
+                        <p>2,0 L turbo baz versiyon • ~261 hp</p>
+                    </div>
+                </div>
+            `;
+        }
+        else if (model === 'Macan GTS') {
+            icerik.innerHTML = `
+                <h2>Porsche Macan GTS</h2>
+                <div class="modellers">
+                    <div class="model">
+                        <img src="images/macan-gts.jpeg" alt="Macan GTS">
+                        <h3>Macan GTS</h3>
+                        <p>~434 hp • Spor SUV tarzı performans ve konfor dengesi</p>
+                    </div>
+                </div>
+            `;
+        }
+        else if (model === 'Panamera 4') {
+            icerik.innerHTML = `
+                <h2>Porsche Panamera 4</h2>
+                <div class="modellers">
+                    <div class="model">
+                        <img src="images/panamera-4.jpeg" alt="Panamera 4">
+                        <h3>Panamera 4</h3>
+                        <p>V6 versiyon • ~348 hp • 0-100 km/s ~5,0 sn gibi değerler</p>
+                    </div>
+                </div>
+            `;
+        }
+        else if (model === 'Panamera Turbo') {
+            icerik.innerHTML = `
+                <h2>Porsche Panamera Turbo</h2>
+                <div class="modellers">
+                    <div class="model">
+                        <img src="images/panamera-turbo.jpeg" alt="Panamera Turbo">
+                        <h3>Panamera Turbo</h3>
+                        <p>V8 motor • Yüksek güç, hızlı ivmelenme ve lüks odaklı</p>
+                    </div>
+                </div>
+            `;
+        }
+        else if (model === 'Taycan 4S') {
+            icerik.innerHTML = `
+                <h2>Porsche Taycan 4S</h2>
+                <div class="modellers">
+                    <div class="model">
+                        <img src="images/taycan-4s.jpeg" alt="Taycan 4S">
+                        <h3>Taycan 4S</h3>
+                        <p>%100 elektrik • 400 kW (~544 PS) • 0-100 km/s ~3,5 sn • Maksimum hız 250 km/s :contentReference[oaicite:1]{index=1}</p>
+                    </div>
+                    <div class="model">
+                        <img src="images/taycanporsche.jpeg" alt="Taycan Turbo S">
+                        <h3>Taycan Turbo S</h3>
+                        <p>Yüksek performans versiyonu • ~938 hp overboost ile 0-60 mph < 2,5 sn seviyeleri :contentReference[oaicite:2]{index=2}</p>
+                    </div>
+                </div>
+            `;
+        }
+        else {
+            // Varsayılan görünüm (hiçbir model seçilmemişse)
+            icerik.innerHTML = `
+                <h2>Hoş geldin Porschekolik!</h2>
+                <p>Sol menüden bir model seçerek detaylı bilgilere ulaşabilirsin.</p>
+            `;
+        }
+
+        // İçerik kutusunu tekrar görünür yap (fade efekti)
+        icerik.style.opacity = 1;
+    }, 300);
+}
+    </script>
+</body>
+</html>

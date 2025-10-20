@@ -1,0 +1,378 @@
+body {
+    margin:0;
+    font-family:'Poppins', sans-serif;
+   background: radial-gradient(circle at top, #0f0f0f 0%, #050505 100%);
+  color: #f0f0f0;
+  overflow-x: hidden;
+}
+
+.ust-banner {
+    text-align:center;
+    background:linear-gradient(90deg,#000,#222,#444);
+    color:#e50914;
+    padding:20px;
+}
+
+.ust-banner h1 { margin:0; font-size:2.5em; }
+.ust-banner p { margin:5px; font-style:italic; }
+
+
+.yan-menu {
+    position:fixed;/* === GENEL AYARLAR === */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at top, #0f0f0f 0%, #050505 100%);
+  color: #f0f0f0;
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  letter-spacing: 1px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* === HEADER === */
+.ust-banner {
+  text-align: center;
+  background: linear-gradient(90deg, #111, #1b1b1b);
+  color: #d40000;
+  padding: 40px 10px;
+  box-shadow: 0 2px 10px rgba(255, 0, 0, 0.2);
+}
+
+.ust-banner h1 {
+  font-size: 3em;
+  font-weight: 600;
+  margin: 0;
+}
+
+.ust-banner p {
+  font-weight: 300;
+  color: #ccc;
+  margin-top: 10px;
+}
+
+/* === YAN MENÜ === */
+.yan-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 240px;
+  height: 100%;
+  background: rgba(20, 20, 20, 0.7);
+  backdrop-filter: blur(8px);
+  border-right: 2px solid rgba(212, 0, 0, 0.3);
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.4);
+  padding-top: 120px;
+  transition: all 0.3s;
+}
+
+.yan-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.yan-menu ul li a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  color: #eee;
+  transition: all 0.2s ease-in-out;
+  border-left: 3px solid transparent;
+  font-weight: 400;
+}
+
+.yan-menu ul li a:hover {
+  background: rgba(212, 0, 0, 0.15);
+  border-left: 3px solid #d40000;
+}
+
+.ok {
+  font-size: 14px;
+  opacity: 0.7;
+  transition: transform 0.3s;
+}
+
+/* === ALT MENÜ === */
+.alt-menu {
+  display: none;
+  background: rgba(40, 40, 40, 0.5);
+  border-left: 1px solid rgba(212, 0, 0, 0.3);
+}
+
+.alt-menu li {
+  padding: 10px 35px;
+  color: #ccc;
+  cursor: pointer;
+  font-size: 0.95em;
+  transition: 0.3s;
+}
+
+.alt-menu li:hover {
+  background: rgba(212, 0, 0, 0.25);
+  color: #fff;
+}
+
+/* === GALERİ === */
+.galeri {
+  margin-left: 260px;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.buyuk-resim img {
+  width: 600px;
+  height: 340px;
+  border-radius: 16px;
+  border: none;
+  box-shadow: 0 0 25px rgba(212, 0, 0, 0.4);
+  transition: opacity 0.5s ease-in-out, transform 0.5s;
+}
+
+.buyuk-resim img:hover {
+  transform: scale(1.02);
+}
+
+.kucuk-resimler img {
+  width: 90px;
+  height: 60px;
+  border-radius: 8px;
+  margin: 10px;
+  opacity: 0.6;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.kucuk-resimler img:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* === İÇERİK === */
+.icerik {
+  margin-left: 260px;
+  background: rgba(25, 25, 25, 0.5);
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  border-radius: 12px;
+  margin: 30px 60px;
+  min-height: 400px;
+  transition: opacity 0.4s;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+.modeller {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 20px;
+}
+
+.model {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 15px;
+  width: 260px;
+  text-align: center;
+  transition: 0.4s;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.model:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 0 20px rgba(212, 0, 0, 0.4);
+}
+
+.model img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.model h3 {
+  color: #d40000;
+  font-weight: 500;
+  margin: 10px 0 5px 0;
+}
+
+/* === FOOTER === */
+footer {
+  text-align: center;
+  background: #0a0a0a;
+  padding: 20px;
+  color: #888;
+  font-size: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  letter-spacing: 0.5px;
+}
+
+/* === YAPRAKLAR (slider noktaları) === */
+.yapraklar {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.yaprak {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin: 6px;
+  border-radius: 50%;
+  background: #333;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.yaprak:hover,
+.yaprak.active {
+  background: #d40000;
+  box-shadow: 0 0 8px rgba(212, 0, 0, 0.6);
+}
+
+    top:0;
+    left:0;
+    margin-top:120px;
+    width:220px;
+    background:#1a1a1a;
+    height:100%;
+    border-right:2px solid #e50914;
+}
+
+.yan-menu ul { list-style:none; margin:0; padding:0; }
+
+.yan-menu ul li a {
+    display:block;
+    padding:12px;
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+}
+.yan-menu ul li a:hover { background:#e50914; }
+
+.alt-menu {
+    display:none;
+    list-style:none;
+    background:#2a2a2a;
+}
+.alt-menu li {
+    padding:8px 15px;
+    cursor:pointer;
+    transition:0.2s;
+}
+.alt-menu li:hover { background:#e50914; }
+.ok { float:right; transition:0.3s; }
+
+
+.galeri {
+    margin-left:240px;
+    text-align:center;
+    padding:20px;
+}
+.buyuk-resim img {
+    width:500px;
+    height:280px;
+    border-radius:8px;
+    border:3px solid #e50914;
+    transition:opacity 0.5s ease-in-out;
+}
+.kucuk-resimler img {
+    width:90px;
+    height:60px;
+    margin:8px;
+    border:2px solid transparent;
+    cursor:pointer;
+}
+.kucuk-resimler img:hover { border-color:#e50914; }
+
+
+.icerik {
+    margin-left:240px;
+    background:#181818;
+    padding:20px;
+    min-height:400px;
+    transition:opacity 0.4s;
+}
+.modeller { display:flex; justify-content:space-around; flex-wrap:wrap; }
+.model {
+    background:#222;
+    border-radius:8px;
+    padding:10px;
+    width:250px;
+    margin:10px;
+    text-align:center;
+    transition:0.3s;
+}
+.model:hover { transform:scale(1.05); box-shadow:0 0 10px #e50914; }
+.model img { width:100%; border-radius:5px; }
+
+
+footer {
+    text-align:center;
+    background:#000;
+    padding:15px;
+    color:#aaa;
+}
+
+
+.yapraklar { text-align:center; margin-top:10px; }
+.yaprak {
+    display:inline-block;
+    width:15px;
+    height:15px;
+    margin:5px;
+    border-radius:50%;
+    background:#555;
+    cursor:pointer;
+    transition:background 0.3s;
+}
+.yaprak:hover, .yaprak.active { background:#e50914; }
+
+/* === LOGO TASARIMI === */
+.logo-alani {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.logo {
+  width: 80px;
+  filter: drop-shadow(0 0 6px rgba(212, 0, 0, 0.4));
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.logo:hover {
+  transform: scale(1.08);
+  filter: drop-shadow(0 0 12px rgba(255, 0, 0, 0.8));
+}
+
+.ust-banner h1 {
+  font-size: 2.5em;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  color: #f5f5f5;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(212, 0, 0, 0.5);
+  border-bottom: 2px solid rgba(212, 0, 0, 0.3);
+  display: inline-block;
+  padding-bottom: 6px;
+}
+
+/* === FOOTER LOGO === */
+.footer-logo {
+  width: 60px;
+  opacity: 0.1;
+  filter: grayscale(100%);
+  transition: opacity 0.4s ease;
+}
+
+footer:hover .footer-logo {
+  opacity: 0.25;
+}
