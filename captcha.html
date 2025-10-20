@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Basit CAPTCHA Demo</title>
+<style>
+  body{font-family: Inter,system-ui,Arial;display:flex;flex-direction:column;align-items:center;padding:30px;background:#f5f6f8}
+  .box{background:white;padding:20px;border-radius:12px;box-shadow:0 6px 20px rgba(20,20,40,.08);width:360px}
+  canvas{border-radius:8px;display:block;margin:0 auto 12px}
+  .controls{display:flex;gap:8px;justify-content:center;margin-bottom:12px}
+  input[type="text"]{width:100%;padding:10px;border-radius:8px;border:1px solid #ddd}
+  button{padding:10px 12px;border-radius:8px;border:none;background:#0f62fe;color:white;cursor:pointer}
+  button.secondary{background:#e6eefc;color:#0f62fe}
+  .msg{height:1.1em;text-align:center;margin-top:8px;font-weight:600}
+</style>
+</head>
+<body>
+<div class="box">
+  <h3 style="text-align:center;margin:0 0 12px">Basit CAPTCHA</h3>
+  <canvas id="cap" width="320" height="100"></canvas>
+  <div class="controls">
+    <button id="refresh" class="secondary">Yenile</button>
+    <button id="audio">Ses</button>
+  </div>
+  <input id="answer" placeholder="CAPTCHA kodunu gir" autocomplete="off" />
+  <div style="display:flex;gap:8px;margin-top:12px">
+    <button id="verify" style="flex:1">Doğrula</button>
+    <button id="demoSubmit" style="flex:1;background:#12b76a">Form Gönder (demo)</button>
+  </div>
+  <div class="msg" id="msg"></div>
+</div>
+
+<script>
+
+const canvas = document.getElementById('cap');
+const ctx = canvas.getContext('2d');
+let currentCode = '';
+
+function randInt(a,b){ return Math.floor(Math.random()*(b-a+1))+a; }
+function randChoice(arr){ return arr[randInt(0,arr.length-1)]; }
+
+function generateCode(len=6){
+  const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'; 
+  let s = '';
+  
+  const array = new Uint32Array(len);
+  window.crypto.getRandomValues(array);
+  for(let i=0;i<len;i++) s += chars[array[i] % chars.length];
+  return s;
+}
+
+function drawCaptcha(code){
+  const w = canvas.width, h=canvas.height;
+ 
+  ctx.clearRect(0,0,w,h);
+  
+  const g = ctx.createLinearGradient(0,0,w,h);
+  g.addColorStop(0, '#ffffff');
+  g.addColorStop(1, '#f3f7ff');
+  ctx.fillStyle = g;
+  ctx.fillRect(0,0,w,h);
+
+  
+  for(let i=0;i<250;i++){
+    ctx.globalAlpha = 0.06;
+    ctx.fillStyle = `rgba(${randInt(100,200)},${randInt(100,200)},${randInt(100,200)},1)`;
+    ctx.beginPath();
+    ctx.arc(randInt(0,w), randInt(0,h), Math.random()*1.8, 0, Math.PI*2);
+    ctx.fill();
+  }
+  ctx.globalAlpha = 1;
+
+  
+  const baseX = 18;
+  for(let i=0;i<code.length;i++){
+    const ch = code[i];
+    const fontSize = randInt(30,44);
+    const rotation = (randInt(-30,30) * Math.PI)/180;
+    ctx.save();
+    const x = baseX + i*(w-36)/code.length + randInt(-4,6);
+    const y = h/2 + randInt(6,14);
+    ctx.translate(x,y);
+    ctx.rotate(rotation);
+    ctx.font = `${fontSize}px "Arial"`;
+   
+    const cg = ctx.createLinearGradient(-10,-10,30,40);
+    cg.addColorStop(0, '#0f172a');
+    cg.addColorStop(1, '#0f62fe');
+    ctx.fillStyle = cg;
+    ctx.fillText(ch, 0, 0);
+    
+    ctx.lineWidth = 1.2;
+    ctx.strokeStyle = 'rgba(20,20,30,0.12)';
+    ctx.strokeText(ch,0,0);
+    ctx.restore();
+  }
+
+ 
+  for(let i=0;i<4;i++){
+    ctx.beginPath();
+    ctx.moveTo(randInt(0,w), randInt(0,h));
+    for(let j=0;j<5;j++){
+      ctx.quadraticCurveTo(randInt(0,w), randInt(0,h), randInt(0,w), randInt(0,h));
+    }
+    ctx.lineWidth = 1 + Math.random()*1.4;
+    ctx.strokeStyle = `rgba(${randInt(30,90)},${randInt(30,90)},${randInt(150,230)},${0.25+Math.random()*0.2})`;
+    ctx.stroke();
+  }
+
+ 
+  for(let i=0;i<100;i++){
+    ctx.fillStyle = `rgba(${randInt(0,50)},${randInt(0,50)},${randInt(0,50)},${Math.random()*0.6})`;
+    ctx.fillRect(randInt(0,w), randInt(0,h), Math.random()*2.5, Math.random()*2.5);
+  }
+}
+
+function refresh(){
+  currentCode = generateCode(6);
+  drawCaptcha(currentCode);
+  document.getElementById('msg').textContent = '';
+}
+
+document.getElementById('refresh').addEventListener('click', refresh);
+
+document.getElementById('verify').addEventListener('click', ()=>{
+  const val = document.getElementById('answer').value.trim().toUpperCase();
+  if(!val) { document.getElementById('msg').textContent = 'Lütfen kodu gir.'; return; }
+  if(val === currentCode){
+    document.getElementById('msg').textContent = '✅ Doğru! (Demo)';
+  } else {
+    document.getElementById('msg').textContent = '❌ Yanlış. Yenile ve tekrar dene.';
+    refresh();
+  }
+});
+
+
+document.getElementById('demoSubmit').addEventListener('click', ()=>{
+  const val = document.getElementById('answer').value.trim().toUpperCase();
+  if(val === currentCode){
+    alert('Form başarıyla gönderildi (demo).');
+    refresh();
+    document.getElementById('answer').value = '';
+  } else {
+    alert('CAPTCHA hatalı. Yenileyin.');
+    refresh();
+  }
+});
+
+
+document.getElementById('audio').addEventListener('click', ()=>{
+  if(!currentCode) return;
+  const utter = new SpeechSynthesisUtterance(currentCode.split('').join(' '));
+  utter.rate = 0.9;
+  speechSynthesis.speak(utter);
+});
+
+
+refresh();
+</script>
+</body>
+</html>
