@@ -1,0 +1,54 @@
+SQL enjeksiyonu (SQi) nedir?
+Yapılandırılmış Sorgu Dili (SQL*) Enjeksiyonu, SQL veritabanlarından verileri değiştirmek veya almak için kullanılan bir kod enjeksiyon tekniğidir. Saldırgan, bir giriş alanına özel SQL ifadeleri ekleyerek, verilerin veritabanından alınmasına, hassas verilerin yok edilmesine veya diğer manipülatif davranışlara olanak tanıyan komutları yürütebilir.
+
+Uygun SQL komutunun yürütülmesiyle, yetkisiz kullanıcı daha ayrıcalıklı bir kullanıcının kimliğini taklit edebilir, kendisini veya diğer veritabanı yöneticilerini oluşturabilir, mevcut verileri kurcalayabilir, işlemleri ve bakiyeleri değiştirebilir ve tüm sunucu verilerini alabilir ve/veya yok edebilir.
+
+Modern bilgi işlemde, SQL enjeksiyonu genellikle İnternet üzerinden, bir web sitesi veya hizmet tarafından sağlanan bir API uç noktasına kötü amaçlı SQL sorguları gönderilerek gerçekleşir (bu konuda daha sonra daha fazla bilgi verilecektir). En şiddetli haliyle SQL enjeksiyonu, bir saldırganın bir makineye kök erişimi elde etmesine olanak tanıyarak onlara tam kontrol sağlayabilir.
+
+*SQL, çoğu veritabanını korumak için kullanılan bir programlama dilidir.
+
+SQL enjeksiyon saldırısı nasıl çalışır?
+Bob adında bir adamın yargılandığı ve yargıç huzuruna çıkmak üzere olduğu bir mahkeme salonunu hayal edin. Duruşmadan önce evrakları doldururken Bob, adını “Bob'un go”'de özgür olduğu şeklinde yazar. Yargıç davasına ulaştığında ve yüksek sesle “okuduğunda Artık Bob'u aramak go” yapmakta özgürdür, icra memuru Bob'un gitmesine izin verir çünkü yargıç öyle söylemiştir.
+
+SQLi'nin biraz farklı çeşitleri olsa da, temel güvenlik açığı esasen aynıdır: sayı gibi belirli bir veri türü için ayrılması gereken bir SQL sorgu alanı bunun yerine komut gibi beklenmedik bilgiler iletilir. Komut çalıştırıldığında amaçlanan sınırların ötesine kaçar ve potansiyel olarak hain davranışlara izin verir. Bir sorgu alanı genellikle bir web sayfasındaki bir forma girilen verilerden doldurulur.
+
+Normal ve kötü amaçlı SQL ifadeleri arasındaki basit bir karşılaştırmaya bakalım:
+
+Normal SQL sorgusu:
+Bu normal SQL sorgusunda studentId dizesi bir SQL ifadesine aktarılır. Amaç, girilen öğrenciyle eşleşen bir öğrenci için öğrenci listesine bakmaktır. Bulunduktan sonra o öğrencinin kaydı iade edilecektir. Basitçe söylemek gerekirse, komut “git bu kullanıcıyı bul ve bana data”'ini ver diyor.
+
+Kod şöyle bir şeye benzeyebilir:
+
+studentId = getRequestString("studentId");
+aramaÖğrenci = "Öğrencilerden * SEÇİN WHERE studentId = " + studentId
+   
+Bir öğrenci, 'Lütfen öğrenci kimlik numaranızı girin' etiketli bir web sayfası formuna 117 öğrenci kimliği girerse
+
+normal form field
+ortaya çıkan SQL sorgusu şöyle görünecektir:
+
+SEÇİN * ÖĞRENCİLERDEN NEREDE öğrenciId = 117;
+Bu komut, API'yi yazan geliştiricinin gerçekleşmesini beklediği şey olan, öğrenci kimliğine sahip belirli bir öğrencinin kaydını döndürecektir.
+
+SQL Enjeksiyon sorgusu:
+Bu örnekte, bir saldırgan bunun yerine giriş alanına bir SQL komutu veya koşullu mantık girer ve aşağıdakilerin öğrenci kimlik numarasını girer:
+
+SQL injection example form field
+Normalde sorgu, eşleşen kimlik için veritabanı tablosunda arama yaparken, şimdi bir kimlik arar veya 1'in 1'e eşit olup olmadığını görmek için testler yapar. Tahmin edebileceğiniz gibi, ifade sütundaki her öğrenci için her zaman doğrudur ve sonuç olarak veritabanı, öğrenci tablosundaki tüm verileri sorguyu yapan saldırgana geri döndürecektir.
+
+SEÇİN * Öğrenciler arasından WHERE studentId = 117 VEYA 1=1;
+SQLi, güvenlik açığı bulunan bir Uygulama Programlama Arayüzünü veya API'yi hedefleyerek çalışır. Bu durumda bir API, bir sunucunun istekleri aldığı ve yanıtladığı yazılım arayüzüdür.
+
+Kötü niyetli bir aktörün, form arayan bir web sitesinde otomatik olarak arama yapmasına ve ardından web sitesinin yazılım geliştiricilerinin veritabanından yararlanmak için amaçlamadığı bir yanıt oluşturabilecek çeşitli SQL sorgularını girmeye çalışmasına olanak tanıyan yaygın olarak kullanılan araçlar mevcuttur.
+
+SQL enjeksiyonlarının uygulanması kolaydır ve ilginç bir şekilde, uygun geliştirme uygulamaları göz önüne alındığında önlenmesi de oldukça kolaydır. Sıkı son teslim tarihleri, deneyimsiz geliştiriciler ve eski kodlar genellikle değişken kod kalitesi ve güvenlik uygulamalarıyla sonuçlandığından gerçek daha belirsizdir. Bir veritabanına erişimi olan bir web sitesindeki herhangi bir form veya API uç noktasındaki tek bir güvenlik açığı alanı, bir güvenlik açığını açığa çıkarmak için yeterli olabilir.
+
+SQL Injection saldırısı nasıl önlenir?
+a riskini azaltmak için çok sayıda yöntem vardır veri ihlali SQL enjeksiyonu nedeniyle. En iyi uygulama olarak çeşitli stratejiler kullanılmalıdır. Daha yaygın uygulamalardan birkaçını inceleyelim:
+
+Hazırlanmış İfadelerin Kullanımı (Parametrelendirilmiş Sorgularla) - Veritabanı girişlerini temizlemeye yönelik bu yöntem, geliştiricileri önce tüm SQL kodunu tanımlamaya ve ardından SQL sorgusuna yalnızca belirli parametreleri aktarmaya zorlamayı içerir; Girilen verilere açıkça ötesine genişletemeyeceği sınırlı bir kapsam verilir. Bu, veri tabanının, giriş alanında sağlanan veri türüne bakılmaksızın, girilen veriler ile çalıştırılacak kod arasında ayrım yapmasına olanak tanır. Bazı sürümler veritabanı girişlerini otomatik olarak temizleyeceğinden, bazı nesne ilişkisel eşleme (ORM) kitaplıkları bu amaç için yaygın olarak kullanılır.
+Tüm Kullanıcı Tarafından Sağlanan Girdilerden Kaçış - SQL yazarken belirli karakterlerin veya kelimelerin özel bir anlamı vardır. Örneğin, ‘*’ karakteri “any” anlamına gelir ve “OR” kelimeleri bir koşulludur. Bu karakterleri yanlışlıkla veya kötü niyetle veritabanına bir API isteğine giren kullanıcıları atlatmak için, kullanıcı tarafından sağlanan girdiden kaçılabilir. Bir karakterden kaçmak, veritabanına onu bir komut veya koşullu olarak ayrıştırmamasını, bunun yerine onu gerçek bir girdi olarak ele almasını söylemenin yoludur.
+Saklanan Prosedürlerin Kullanımı - Tek başına sağlam bir güvenlik stratejisi olmasa da, saklanan prosedürler SQL enjeksiyonuyla ilişkili riskin sınırlandırılmasına yardımcı olabilir. SQL sorgularını çalıştıran veritabanı hesabının izinlerini uygun şekilde sınırlandırarak, SQL enjeksiyonuna karşı savunmasız olan sağlam olmayan uygulama kodu bile ilgisiz veritabanı tablolarını değiştirmek için gerekli izinlerden yoksun kalacaktır. Saklanan prosedürler aynı zamanda giriş parametrelerinin türünü de kontrol ederek, alanın almak üzere tasarlandığı türü ihlal eden verilerin girilmesini önleyebilir. Statik sorguların yetersiz olduğu durumlarda, genellikle saklı prosedürlerden kaçınılmalıdır.
+En Az Ayrıcalığı Uygulayın - Genel bir kural olarak, bir web sitesinin dinamik SQL kullanması gereken tüm durumlarda, izinleri ilgili sorguyu yürütmek için gereken en dar kapsamla sınırlandırarak SQL enjeksiyonuna maruz kalmayı azaltmak önemlidir. En belirgin haliyle bu, bir yönetici hesabının hiçbir durumda yetkisiz bir istekten gelen API çağrısı sonucunda SQL komutlarını yürütmemesi gerektiği anlamına gelir. Depolanan prosedürler statik sorgular için en iyi şekilde kullanılırken, en az ayrıcalığın uygulanması dinamik SQL sorgularının risklerinin azaltılmasına yardımcı olabilir.
+Bileşik SQL enjeksiyon saldırısı nedir?
+Güvenlik önlemlerini atlatmak için akıllı saldırganlar bazen hedeflenen bir web sitesine çok vektörlü saldırılar uygulayabilir. Tek bir saldırı hafifletilebilirken, veritabanı yöneticileri ve bilgi güvenliği ekiplerinin de ilgi odağı haline gelebilir. DDoS saldırıları, DNS kaçırma ve diğer bozma yöntemleri bazen kapsamlı SQL enjeksiyon saldırılarını uygulamak için dikkat dağıtıcı olarak kullanılır. Sonuç olarak, kapsamlı bir tehdit azaltma stratejisi en geniş koruma yelpazesini sağlar. Cloudflare'in web uygulaması güvenlik duvarı, DDoS azaltma ve DNS güvenliği bütünsel bir güvenlik stratejisinin temel unsurlarını içerir.
